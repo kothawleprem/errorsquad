@@ -1,0 +1,40 @@
+{% extends 'staff_template/base_template.html' %}
+{% block page_title %}
+{% load static %}
+Home
+{% endblock page_title %}
+{% block main_content %}
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+       <section style="background-color:#00ffcc;" class="content">
+      <div class="container-fluid">
+      <center>
+       <img style="width: 700px;" src="{% static "dist/img/img1.jpg" %}" alt=""></center>
+     
+     <br><br><br>
+      <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+          <div class="h-100 p-5 text-white bg-dark rounded-3">
+            <h2>Add Student</h2>
+            <p>Our staff is highly experienced and endowed with valuable skills.</p>
+               {% url 'add_student' as add_student %}
+            <a   href="{% url 'add_student' %}"  class="btn btn-outline-light" type="button">Add Student</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="h-100 p-5 bg-light border rounded-3">
+            <h2>Manage Student</h2>
+            <p>The staff is highly qualified with high experience.</p>
+              {% url 'manage_student' as manage_student %}
+              {% url 'edit_student' student_id=id as edit_student %}
+            <a href="{% url 'manage_student' %}"" class="btn btn-outline-secondary" type="button">Manage Student</a>
+          </div>
+</div>
+</div>
+
+      </div>
+    </section>
+    <!-- /.content -->
+{% endblock main_content %}
+

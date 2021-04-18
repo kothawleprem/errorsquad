@@ -1,0 +1,77 @@
+
+{% extends 'hod_template/base_template.html' %}
+{% block page_title %}
+{% load static %}
+{% endblock page_title %}
+{% block main_content %}
+    <!-- Main content -->
+    <section style="background-color:#00ffcc;" class="content">
+      <div class="container-fluid">
+      <center>
+       <img style="width: 700px;" src="{% static "dist/img/img2.jpg" %}" alt=""></center>
+     
+     <br><br><br>
+      <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+          <div class="h-100 p-5 text-white bg-dark rounded-3">
+            <h2>Add Staff</h2>
+            <p>Our staff is highly experienced and endowed with valuable skills.</p>
+              {% url 'add_staff' as add_staff %}
+            <a  href="{{ add_staff }}" class="btn btn-outline-light" type="button">Add Staff</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="h-100 p-5 bg-light border rounded-3">
+            <h2>Manage Staff</h2>
+            <p>The staff is highly qualified with high experience.</p>
+               {% url 'manage_staff' as manage_staff %}
+            {% url 'edit_staff' staff_id=id as edit_staff %}
+            <a href="{% url 'manage_staff' %}" class="btn btn-outline-secondary" type="button">Manage Staff</a>
+          </div>
+</div>
+</div>
+           <br><br><br>
+      <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+          <div class="h-100 p-5 text-white bg-light rounded-3">
+            <h2>Add Course</h2>
+            <p>The students are the bright future of our nation. Add some bright courses for them!!</p>
+               {% url 'add_course' as add_course %}
+            <a href="{% url 'add_course' %}" class="btn btn-outline-dark" type="button">Add Courses</a>
+          </div>
+        </div>
+    
+        <div class="col-md-6">
+          <div class="h-100 p-5 bg-dark border rounded-3">
+            <h2>Manage Course</h2>
+            <p>Our college has the best placements in the country.
+We are among the top-ranked institutes in the world. Manage the perfect courses for the student.</p>
+                  {% url 'manage_course' as manage_course %}
+              {% url 'edit_course' course_id=id as edit_course %}
+            <a href="{% url 'manage_course' %}"  class="btn btn-outline-secondary" type="button">Manage Courses</a>
+          </div>
+          </div>
+</div>
+           <br><br><br>
+      <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+          <div class="h-100 p-5 text-white bg-dark rounded-3">
+            <h2>Add Subject</h2>
+            <p>
+            The students indulge in extra-curricular activities along with attending lectures.Add some interesting subjects!!</p>
+              {% url 'add_subject' as add_subject %}
+            <a href="{% url 'add_subject' %}"  class="btn btn-outline-light" type="button">Add Subject</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="h-100 p-5 bg-light border rounded-3">
+            <h2>Manage Subject</h2>
+            <p>Edit your Subjects.</p>
+               {% url 'manage_subject' as manage_subject %}
+            {% url 'edit_subject' subject_id=id as edit_subject %}
+            <a  href="{% url 'manage_subject' %}"  class="btn btn-outline-secondary" type="button">Manage Subject</a>
+          </div>
+    </section>
+    <!-- /.content -->
+{% endblock main_content %}
+
